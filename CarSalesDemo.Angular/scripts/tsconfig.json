@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es5",
+    "moduleResolution": "node",
+    "outDir": "../wwwroot/appScripts/" // where transpiled file will be placed.
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot",
+    "typings/main",
+    "typings/main.d.ts"
+  ]
+}

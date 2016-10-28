@@ -1,0 +1,79 @@
+﻿[
+  {
+    "Title": "2016 Subaru Forester 2.5i-L S4 Auto AWD MY16",
+    "SellerType": 0,
+    "ImageName": "car1.jpg",
+    "Price": 33950.0,
+    "Id": 1
+  },
+  {
+    "Title": "2016 Hyundai Tucson Active X Auto 2WD MY17",
+    "SellerType": 0,
+    "ImageName": "car2.jpg",
+    "Price": 31990.0,
+    "Id": 2
+  },
+  {
+    "Title": "2015 Ford Mondeo Trend MD Auto",
+    "SellerType": 1,
+    "ImageName": "car3.jpg",
+    "Price": 37888.0,
+    "Id": 3
+  },
+  {
+    "Title": "2016 Subaru Levorg 2.0GT V1 Auto AWD MY17",
+    "SellerType": 1,
+    "ImageName": "car4.jpg",
+    "Price": 41990.0,
+    "Id": 4
+  },
+  {
+    "Title": "2012 Land Rover Range Rover Sport SDV6 Luxury Auto 4x4 MY12",
+    "SellerType": 1,
+    "ImageName": "car5.jpg",
+    "Price": 58995.0,
+    "Id": 5
+  },
+  {
+    "Title": "2015 Fiat 500C S Auto",
+    "SellerType": 0,
+    "ImageName": "car6.jpg",
+    "Price": 22000.0,
+    "Id": 6
+  },
+  {
+    "Title": "2016 Suzuki Swift GL Auto MY15",
+    "SellerType": 0,
+    "ImageName": "car7.jpg",
+    "Price": 15990.0,
+    "Id": 7
+  },
+  {
+    "Title": "2016 Mazda BT-50 XTR UR Manual 4x4",
+    "SellerType": 1,
+    "ImageName": "car8.jpg",
+    "Price": 54217.0,
+    "Id": 8
+  },
+  {
+    "Title": "2016 Subaru Levorg 2.0GT V1 Auto AWD MY17",
+    "SellerType": 0,
+    "ImageName": "car9.jpg",
+    "Price": 46990.0,
+    "Id": 9
+  },
+  {
+    "Title": "2016 Kia Sportage Si Auto 2WD MY16",
+    "SellerType": 1,
+    "ImageName": "car10.jpg",
+    "Price": 32736.0,
+    "Id": 10
+  },
+  {
+    "Title": "2016 Ford EcoSport Ambiente BK Manual",
+    "SellerType": 0,
+    "ImageName": "car11.jpg",
+    "Price": 19990.0,
+    "Id": 11
+  }
+]
