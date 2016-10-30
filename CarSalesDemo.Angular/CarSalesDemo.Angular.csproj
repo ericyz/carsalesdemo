@@ -71,6 +71,11 @@
     <Content Include=".dockerignore" />
     <Content Include=".editorconfig" />
     <Content Include=".travis.yml" />
+    <Content Include="app\app.component.html" />
+    <Content Include="app\car-detail\car-detail.html" />
+    <Content Include="app\car-list\car-image.component.html" />
+    <Content Include="app\car-list\car-row.component.html" />
+    <Content Include="app\car-list\car-list.component.css" />
     <Content Include="CHANGELOG.md" />
     <Content Include="Dockerfile" />
     <Content Include="LICENSE" />
@@ -80,6 +85,8 @@
     <Content Include="resource\black-shoes.jpg" />
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
+    <Content Include="app\app.component.css" />
+    <Content Include="app\car-list\car-list.component.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -109,14 +116,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app\app.ts" />
-    <TypeScriptCompile Include="app\component\car.ts" />
-    <TypeScriptCompile Include="app\component\carimage.ts" />
-    <TypeScriptCompile Include="app\component\carlist.ts" />
-    <TypeScriptCompile Include="app\component\carprice.ts" />
-    <TypeScriptCompile Include="app\component\carrow.ts" />
-    <TypeScriptCompile Include="app\component\main.ts" />
+    <TypeScriptCompile Include="app\app.component.ts" />
+    <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\app.routes.ts" />
+    <TypeScriptCompile Include="app\car-detail\car-detail.component.ts" />
+    <TypeScriptCompile Include="app\car-list\car-list.component.ts" />
+    <TypeScriptCompile Include="app\car.ts" />
+    <TypeScriptCompile Include="app\car-list\car-image.component.ts" />
+    <TypeScriptCompile Include="app\car-list\car-row.component.ts" />
+    <TypeScriptCompile Include="app\index.ts" />
+    <TypeScriptCompile Include="app\navigation\navigation.component.ts" />
     <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="environments\environment.prod.ts" />
+    <TypeScriptCompile Include="environments\environment.ts" />
+    <TypeScriptCompile Include="main.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

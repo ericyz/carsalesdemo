@@ -1,17 +1,18 @@
-﻿import {Component} from '@angular/core';
-import { Car } from './car';
+﻿import { Component, EventEmitter } from '@angular/core';
+import { Car } from './../car';
 
 @Component({
-    selector: 'carsales-app',
-    template: `<div class='carsales-app'>
-                   <car-list [cars]='cars' (carWasSelected)="onCarSelected($event)"></car-list>     
-                </div>
-                `
+    selector: 'car-list',
+    templateUrl: "car-list.component.html",
+    styleUrls: ['car-list.component.css']
 })
-export class CarSalesApp {
+export class CarList {
+
     cars: Car[];
+//    carWasSelected: EventEmitter<Car>;
 
     public constructor() {
+//        this.carWasSelected = new EventEmitter<Car>();
         this.cars = [
             new Car(1, "2016 Hyundai Tucson Active X Auto 2WD MY17", "private seller", "/resource/black-shoes.jpg", 0.1),
             new Car(2, "This is Car2222 222 22222222", "dealer", "/resource/black-shoes.jpg", 0.2),
@@ -21,10 +22,11 @@ export class CarSalesApp {
             new Car(2, "This is Car22 22222222 22222", "dealer", "/resource/black-shoes.jpg", 0.2),
         ];
     }
+    clicked(car: Car): void {
+        alert('car was selected  ' + JSON.stringify(car));
+    }
 
-    onCarSelected(car: Car): void {
-        alert(car + "Car was selected");
+    getCursorStatus(): string {
+        return "pointer";
     }
 }
-
-

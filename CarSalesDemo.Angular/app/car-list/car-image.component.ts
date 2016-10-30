@@ -1,12 +1,9 @@
 ﻿import { Component } from '@angular/core';
-import { Car } from './car';
+import { Car } from './../car';
 @Component(
     {
         selector: 'car-image',
-        template: `<div class='car-image'>
-                         <img src="{{car.imageUrl}}">
-                   </div>
-                    `,
+        templateUrl: 'car-image.component',
         inputs: ['car'],
         host: { 'class': 'ui small image' }
     })
