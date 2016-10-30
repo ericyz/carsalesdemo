@@ -1,67 +1,37 @@
 ﻿import { NgModule, Component } from '@angular/core';
-import {BrowserModule } from "@angular/platform-browser";
+import { BrowserModule } from "@angular/platform-browser";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { RouterModule, Routes } from '@angular/router';
+import { CarSalesApp } from './component/main';
+import { Car } from './component/car';
+import { CarList } from './component/carlist';
+import { CarRow } from './component/carrow';
+import { CarPrice } from './component/carprice';
+import { CarImage } from './component/carimage';
+import { CarDetail } from './component/cardetail';
 
-
-
-@Component({
-    selector: 'carsales-app',
-    template: `<div class='carsales-app'>tesdfsfdsft</div>`
-})
-class CarSalesApp {
-    cars: Car[];
-
-    public constructor() {
-        this.cars = [
-                        new Car(1, "Car1", "http://urltest1", 0.1),
-                        new Car(2, "Car2", "http://urltest2", 0.2)
-                    ];
-    }
-}
-//
-//@Component({
-//    selector: 'carsales-app',
-//    template: `<div class='carsales-app' [car]='cars[0]'><car-row></car-row></div>`
-//})
-//class CarSaleApp {
-//    cars: Car[];
-//
-//    public constructor() {
-//        this.cars = [
-//                        new Car(1, "Car1", "http://urltest1", 0.1),
-//                        new Car(2, "Car2", "http://urltest2", 0.2),
-//                    ];
-//    }
-//}
-
-
-// Model
-class Car {
-    public constructor(public id: number, public title: string, public imageUrl: string, public price: number) { }
-}
-//
-//@Component({
-//    selector: 'car-row',
-//    inputs: ['car'],
-//    template: `<div class='car-row' [car]='car' >
-//                    {{car.id}}
-//                    {{car.title}}
-//                    {{car.imageUrl}}
-//                    {{car.price}}
-//                </div>`
-//})
-//class CarRow {
-//
-//}
 @NgModule({
     declarations: [
-        CarSalesApp
+        // Main
+        CarSalesApp,
+        CarRow,
+        CarImage,
+        CarList,
+        CarPrice,
+
+        // Detail Page
+        CarDetail
     ],
     imports: [BrowserModule],
     bootstrap: [CarSalesApp]
 })
-class CarSaleAppModule
-{
+class CarSaleAppModule {
 }
 
+// Navigation
+const routes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: CarSalesApp },
+    { path: 'detail', component: 'CarDetail' },
+];
 platformBrowserDynamic().bootstrapModule(CarSaleAppModule);
