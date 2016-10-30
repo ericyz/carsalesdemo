@@ -1,6 +1,8 @@
 ﻿import { Routes, RouterModule } from '@angular/router';
 import { CarList } from './car-list/car-list.component';
+import { CarListMainComponent } from './car-list/main.component';
 import { CarDetail } from './car-detail/car-detail.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
     {
@@ -10,11 +12,15 @@ const routes: Routes = [
     },
     {
         path: 'home',
-        component: CarList
+        component: CarListMainComponent
     },
     {
-        path: 'detail/:keyId',
+        path: 'detail/:id',
         component: CarDetail
+    },
+    {
+        path: 'error',
+        component: ErrorComponent
     }
 ];
 

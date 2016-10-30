@@ -72,10 +72,14 @@
     <Content Include=".editorconfig" />
     <Content Include=".travis.yml" />
     <Content Include="app\app.component.html" />
-    <Content Include="app\car-detail\car-detail.html" />
+    <Content Include="app\car-detail\car-detail.component.css" />
+    <Content Include="app\car-detail\car-detail.component.html" />
+    <Content Include="app\car-list\car-list-type-filter.component.html" />
     <Content Include="app\car-list\car-image.component.html" />
     <Content Include="app\car-list\car-row.component.html" />
-    <Content Include="app\car-list\car-list.component.css" />
+    <Content Include="app\car-list\main.component.html" />
+    <Content Include="app\error\error.component.html" />
+    <Content Include="app\navigation\navigation.component.html" />
     <Content Include="CHANGELOG.md" />
     <Content Include="Dockerfile" />
     <Content Include="LICENSE" />
@@ -85,7 +89,6 @@
     <Content Include="resource\black-shoes.jpg" />
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
-    <Content Include="app\app.component.css" />
     <Content Include="app\car-list\car-list.component.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -116,20 +119,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.component.css" />
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\app.routes.ts" />
     <TypeScriptCompile Include="app\car-detail\car-detail.component.ts" />
+    <TypeScriptCompile Include="app\car-list\car-list-type-filter.component.ts" />
     <TypeScriptCompile Include="app\car-list\car-list.component.ts" />
+    <TypeScriptCompile Include="app\car-list\main.component.ts" />
     <TypeScriptCompile Include="app\car.ts" />
     <TypeScriptCompile Include="app\car-list\car-image.component.ts" />
     <TypeScriptCompile Include="app\car-list\car-row.component.ts" />
+    <TypeScriptCompile Include="app\error\error.component.ts" />
     <TypeScriptCompile Include="app\index.ts" />
     <TypeScriptCompile Include="app\navigation\navigation.component.ts" />
     <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
-    <TypeScriptCompile Include="environments\environment.prod.ts" />
-    <TypeScriptCompile Include="environments\environment.ts" />
-    <TypeScriptCompile Include="main.ts" />
+    <TypeScriptCompile Include="app\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="app\environments\environment.ts" />
+    <TypeScriptCompile Include="app\app.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

@@ -1,0 +1,22 @@
+﻿div {
+    width: 100%;
+}
+
+img {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.price {
+    text-align: right;
+    margin-right: 3em;
+}

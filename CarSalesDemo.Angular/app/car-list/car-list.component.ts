@@ -1,17 +1,18 @@
 ﻿import { Component, EventEmitter } from '@angular/core';
 import { Car } from './../car';
+import {Router,ActivatedRoute,} from '@angular/router';
 
 @Component({
     selector: 'car-list',
-    templateUrl: "car-list.component.html",
-    styleUrls: ['car-list.component.css']
+    templateUrl: "app/car-list/car-list.component.html",
+    styleUrls: ["app/car-list/car-list.component.css"]
 })
 export class CarList {
 
     cars: Car[];
 //    carWasSelected: EventEmitter<Car>;
 
-    public constructor() {
+    public constructor(private router: Router,) {
 //        this.carWasSelected = new EventEmitter<Car>();
         this.cars = [
             new Car(1, "2016 Hyundai Tucson Active X Auto 2WD MY17", "private seller", "/resource/black-shoes.jpg", 0.1),
@@ -23,7 +24,9 @@ export class CarList {
         ];
     }
     clicked(car: Car): void {
-        alert('car was selected  ' + JSON.stringify(car));
+        console.log('car was selected  ' + JSON.stringify(car));
+        // Redirect
+        this.router.navigate(['/detail', car.id]);
     }
 
     getCursorStatus(): string {

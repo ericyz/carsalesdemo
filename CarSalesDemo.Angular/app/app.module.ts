@@ -1,27 +1,32 @@
-﻿import { NgModule, Component } from '@angular/core';
+﻿import { NgModule } from '@angular/core';
 import { BrowserModule } from "@angular/platform-browser";
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-import { RouterModule, Routes } from '@angular/router';
-//import { CarSalesApp as CarSalesAppComponent } from './component/main';
 import { CarSalesAppComponent} from './app.component';
-import { Car } from './car';
 import { CarList } from './car-list/car-list.component';
+import { CarTypeFilter } from './car-list/car-list-type-filter.component';
+import { CarListMainComponent } from './car-list/main.component';
 import { CarRow } from './car-list/car-row.component';
 import { CarImage } from './car-list/car-image.component';
 import { CarDetail } from './car-detail/car-detail.component';
+import { CarSalesNavBar } from './navigation/navigation.component';
+import { ErrorComponent } from './error/error.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { appRoutes } from './app.routes';
 
 @NgModule({
     declarations: [
-        // Main
         CarSalesAppComponent,
-       
+        // Main
         CarRow,
         CarImage,
         CarList,
+        CarTypeFilter,
+        CarListMainComponent,
+        // Navigation 
+        CarSalesNavBar,
 //        // Detail Page
-        CarDetail
+        CarDetail,
+        // Error Page
+        ErrorComponent
     ],
     imports: [BrowserModule, appRoutes],
     bootstrap: [CarSalesAppComponent],

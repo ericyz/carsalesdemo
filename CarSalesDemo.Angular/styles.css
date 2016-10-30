@@ -12,14 +12,17 @@ h2, h3 {
 body { 
   margin: 2em; 
 }
+
 body, input[text], button { 
   color: #888; 
   font-family: Cambria, Georgia; 
 }
+
 a {
   cursor: pointer;
   cursor: hand;
 }
+
 button {
   font-family: Arial;
   background-color: #eee;
@@ -29,6 +32,7 @@ button {
   cursor: pointer;
   cursor: hand;
 }
+
 button:hover {
   background-color: #cfd8dc;
 }
