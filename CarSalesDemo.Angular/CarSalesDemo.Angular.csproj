@@ -79,14 +79,17 @@
     <Content Include="app\car-list\car-row.component.html" />
     <Content Include="app\car-list\main.component.html" />
     <Content Include="app\error\error.component.html" />
+    <Content Include="app\navigation\navigation.component.css" />
     <Content Include="app\navigation\navigation.component.html" />
     <Content Include="CHANGELOG.md" />
     <Content Include="Dockerfile" />
     <Content Include="LICENSE" />
+    <Content Include="favicon.ico" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="resource\black-shoes.jpg" />
+    <Content Include="resource\image\logo.png" />
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
     <Content Include="app\car-list\car-list.component.html" />
@@ -101,7 +104,6 @@
     <Content Include=".gitignore" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
-    <Content Include="favicon.ico" />
     <Content Include="index.html" />
     <Content Include="karma-test-shim.js" />
     <Content Include="karma.conf.js" />
@@ -133,6 +135,7 @@
     <TypeScriptCompile Include="app\error\error.component.ts" />
     <TypeScriptCompile Include="app\index.ts" />
     <TypeScriptCompile Include="app\navigation\navigation.component.ts" />
+    <TypeScriptCompile Include="app\service\car.service.ts" />
     <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
     <TypeScriptCompile Include="app\environments\environment.prod.ts" />
     <TypeScriptCompile Include="app\environments\environment.ts" />

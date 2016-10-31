@@ -5,5 +5,4 @@ import { CarSaleAppModule } from './index';
 if (environment.production) {
     enableProdMode();
 }
-
 platformBrowserDynamic().bootstrapModule(CarSaleAppModule);

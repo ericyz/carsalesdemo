@@ -1,8 +1,27 @@
-﻿<nav class="navbar navbar-default  navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">CarSale Demo</a>
-        </div>
-    </div><!-- /.navbar-collapse -->
-</nav>
+﻿<!--<nav class="navbar navbar-default  navbar-fixed-top">-->
+<!--    <div class="container-fluid">-->
+<!--        $1$ Brand and toggle get grouped for better mobile display #1#-->
+<!--        <div class="navbar-header">-->
+<!--            <a class="navbar-brand" href="#">CarSale Demo</a>-->
+<!--        </div>-->
+<!--    </div>$1$ /.navbar-collapse #1#-->
+<!--</nav>-->
+<div class="ui top fixed menu">
+
+    <a class="item" routerLink='/home'
+       routerLinkActive='active'><img src="/resource/image/logo.png">CarSales Demo</a>
+    <div class="right menu">
+        <a class="ui item">
+            <span id="span_type">By Seller Type</span>
+            <select class="ui dropdown">
+                <option value="">All</option>
+                <option value="1">Dealer</option>
+                <option value="0">Private</option>
+            </select>
+        </a>
+
+    </div>
+
+
+</div>
+
