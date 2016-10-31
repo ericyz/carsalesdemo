@@ -38,6 +38,4 @@ namespace CarSalesDemo.Repository {
             throw new NotImplementedException();
         }
     }
-
-
 }

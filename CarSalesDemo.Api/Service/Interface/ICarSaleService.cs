@@ -8,6 +8,7 @@ namespace CarSalesDemo.Api.Service.Interface {
     public interface ICarSaleService {
         IEnumerable<Car> GetCars();
         IEnumerable<Car> GetCarByResellerType(SellerType type);
-        IEnumerable<Car> GetCarByResellerType(string type);
+        IEnumerable<Car> GetCarByResellerType(int type);
+        Car GetCarById(int id);
     }
 }

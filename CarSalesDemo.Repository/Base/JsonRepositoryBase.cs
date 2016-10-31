@@ -12,7 +12,7 @@ namespace CarSalesDemo.Repository.Base {
         protected string _jsonSrc;
 
         protected JsonRepositoryBase(string jsonFileName) {
-            var jsonFolderPath = ConfigurationManager.AppSettings["JsonDataFolder"];
+            var jsonFolderPath = ConfigurationManager.AppSettings["DataFolder"] + "Json/";
             _jsonSrc = JsonFilePathHelper.GetJsonFilePath(jsonFolderPath, $"{jsonFileName}.json");
         }
     }

@@ -21,7 +21,7 @@ namespace CarSalesDemo.Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-
+            config.EnableCors();
             // Diable XML Response
             config.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
             // Enable JSON Response

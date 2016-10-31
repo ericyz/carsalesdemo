@@ -1,4 +1,5 @@
-﻿export interface CarJson {
+﻿import { environment } from './environments/environment';
+export interface CarJson {
     id: number;
     imageName: string;
     sellerType: number;
@@ -17,7 +18,7 @@ export class Car {
                 id: json.id,
                 title: json.title,
                 type: json.sellerType == 0 ? 'dealer' : 'private seller',
-                imageUrl: json.imageName,
+                imageUrl: `${environment.baseUrl}/images?name=${json.imageName}`,
                 price: json.price
             });
 //        console.log(ret);

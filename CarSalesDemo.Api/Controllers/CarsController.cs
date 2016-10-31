@@ -2,8 +2,10 @@
 using System;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace CarSalesDemo.Api.Controllers {
+    [EnableCors(origins: "http://localhost:49603", headers: "*", methods: "*")]
     public class CarsController : ApiController {
 
         private readonly ICarSaleService _service;
@@ -28,7 +30,20 @@ namespace CarSalesDemo.Api.Controllers {
             try {
                 if (string.IsNullOrEmpty(type))
                     return BadRequest();
-                var car = await Task.FromResult(_service.GetCarByResellerType(type));
+                var car = await Task.FromResult(_service.GetCarByResellerType(int.Parse(type)));
+                return Ok(car);
+            } catch (Exception) {
+                return InternalServerError();
+            }
+        }
+
+        [HttpGet]
+        [Route("api/cars/{id}")]
+        public async Task<IHttpActionResult> GetById(int id) {
+            try {
+                var car = await Task.FromResult(_service.GetCarById(id));
+                if (car == null)
+                    return NotFound();
                 return Ok(car);
             } catch (Exception) {
                 return InternalServerError();

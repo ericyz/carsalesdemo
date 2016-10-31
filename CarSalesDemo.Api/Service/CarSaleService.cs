@@ -19,11 +19,16 @@ namespace CarSalesDemo.Api.Service.Interface {
         }
 
         public IEnumerable<Car> GetCarByResellerType(SellerType type) {
-            return GetCarByResellerType(type.ToString());
+            return GetCarByResellerType(type);
         }
 
-        public IEnumerable<Car> GetCarByResellerType(string type) {
-            return _carRepository.ReadAll().Where(s => s.SellerType.ToString().ToUpper() == type.ToUpper());
+        public IEnumerable<Car> GetCarByResellerType(int type) {
+            return _carRepository.ReadAll().Where(s => (int)s.SellerType == type);
+        }
+
+        public Car GetCarById(int id)
+        {
+            return _carRepository.ReadAll().FirstOrDefault(s =>s.Id == id);
         }
     }
 }

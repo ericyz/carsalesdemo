@@ -25,7 +25,7 @@ export class CarDetail implements OnInit {
             var id: number = RouteUtil.ERROR_ID;
             if ((id = RouteUtil.validId(s)) !== RouteUtil.ERROR_ID) {
                 this.carService.updateId(id);
-            }
+            } 
         });
         //        this.route.params.forEach((params: Params) => {
         //            let id = + params['id'];
