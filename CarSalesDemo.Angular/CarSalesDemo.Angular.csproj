@@ -93,6 +93,7 @@
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
     <Content Include="app\car-list\car-list.component.html" />
+    <TypeScriptCompile Include="app\utility\route.util.ts" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

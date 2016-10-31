@@ -13,6 +13,7 @@ import { ErrorComponent } from './error/error.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { appRoutes } from './app.routes';
 import { HttpModule } from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { HttpModule } from '@angular/http';
         // Error Page
         ErrorComponent
     ],
-    imports: [BrowserModule, appRoutes, HttpModule],
+    imports: [BrowserModule, appRoutes, HttpModule, ReactiveFormsModule ],
     bootstrap: [CarSalesAppComponent],
     providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy },CarService]
 })

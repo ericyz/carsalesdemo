@@ -1,3 +1,3 @@
-﻿<div class='ui items' [style.cursor]='getCursorStatus()' *ngFor='let car of cars'>
+﻿<div class='ui items' [style.cursor]='getCursorStatus()' *ngFor='let car of cars | async '>
     <car-row [car]='car' (click)='clicked(car)'></car-row>
 </div>
