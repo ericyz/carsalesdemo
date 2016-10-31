@@ -8,9 +8,12 @@ import { CarRow } from './car-list/car-row.component';
 import { CarImage } from './car-list/car-image.component';
 import { CarDetail } from './car-detail/car-detail.component';
 import { CarSalesNavBar } from './navigation/navigation.component';
+import { CarService } from './service/car.service';
 import { ErrorComponent } from './error/error.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { appRoutes } from './app.routes';
+import { HttpModule } from '@angular/http';
+
 
 @NgModule({
     declarations: [
@@ -28,9 +31,9 @@ import { appRoutes } from './app.routes';
         // Error Page
         ErrorComponent
     ],
-    imports: [BrowserModule, appRoutes],
+    imports: [BrowserModule, appRoutes, HttpModule],
     bootstrap: [CarSalesAppComponent],
-    providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
+    providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy },CarService]
 })
 export class CarSaleAppModule {
 }
