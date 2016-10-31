@@ -11,10 +11,13 @@ import { Observable } from 'rxjs';
     styleUrls: ['app/car-detail/car-detail.component.css']
 })
 export class CarDetail implements OnInit {
-    car: Observable<Car>;
+    cars: Observable<Car[]>;
 
     constructor(private route: ActivatedRoute, private carService: CarService, private activeRoute: ActivatedRoute) {
-        this.car = carService.selectedCar;
+        this.cars = carService.selectedCar;
+//        this.car.subscribe(c=> {
+//            console.log(`the car detail : ${JSON.stringify(c)}`)
+//        });
     }
 
     ngOnInit(): void {

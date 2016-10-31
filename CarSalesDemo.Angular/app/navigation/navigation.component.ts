@@ -7,8 +7,7 @@ import { RouteUtil } from './../utility/route.util';
 @Component({
     selector: 'carsales-nav',
     templateUrl: 'app/navigation/navigation.component.html',
-    styleUrls: ['app/navigation/navigation.component.css'],
-    providers: [CarService]
+    styleUrls: ['app/navigation/navigation.component.css']
 
 })
 export class CarSalesNavBar {
@@ -21,7 +20,7 @@ export class CarSalesNavBar {
 //            this.sellerType = p['type'] || "";
 //            console.log(`seller type = ${this.sellerType}`);
             var sellerType = RouteUtil.getValidateType(p);
-         
+
 //            sellerType = p['type'];
             this.formGroup = formBuilder.group({
                 'type': [sellerType]

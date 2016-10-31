@@ -9,8 +9,5 @@ import { Car } from './../car';
 })
 export class CarRow {
     car: Car;
-
-    constructor() {
-//        console.log("car row constructed");
-    }
+  
 }

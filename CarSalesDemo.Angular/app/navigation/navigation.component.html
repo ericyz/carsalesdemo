@@ -2,18 +2,5 @@
 <div class="ui top fixed menu">
     <a class="item" routerLink='/home'
        routerLinkActive='active'><img src="/resource/image/logo.png">CarSales Demo</a>
-    <div class="right menu">
-        <a class="ui item">
-        <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
-                <span id="span_type" >By Seller Type</span>
-                <select class="ui dropdown" [formControl]='sellerTypeContoller'>
-                    <option value="">All</option>
-                    <option value="0">Dealer</option>
-                    <option value="1">Private</option>
-                </select>
-
-           </form>
-        </a>
-    </div>
 </div>
 

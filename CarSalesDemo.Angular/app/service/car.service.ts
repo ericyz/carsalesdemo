@@ -11,7 +11,7 @@ import 'rxjs/add/operator/toPromise';
 export class CarService {
 
     private _cars: BehaviorSubject<Car[]> = new BehaviorSubject<Car[]>([]);
-    private _selectedCar: BehaviorSubject<Car> = new BehaviorSubject<Car>(null);
+    private _selectedCar: BehaviorSubject<Car[]> = new BehaviorSubject<Car[]>([]);
 
     // Operations
     private _refreshSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
@@ -20,7 +20,7 @@ export class CarService {
 
     // Expose to public for subscribing the change
     public cars: Observable<Car[]> = this._cars.asObservable();
-    public selectedCar: Observable<Car> = this._selectedCar.asObservable();
+    public selectedCar: Observable<Car[]> = this._selectedCar.asObservable();
 
 
     constructor(private http: Http) {
@@ -51,7 +51,7 @@ export class CarService {
                 .subscribe(json => {
                     var car = Car.fromJson(json);
                     console.log(car);
-                    this._selectedCar.next(car);
+                    this._selectedCar.next([car]);
                 });
         }
     }

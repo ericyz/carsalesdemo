@@ -1,4 +1,4 @@
-﻿<div class="ui segment">
+﻿<div class="ui segment" *ngFor="let car of cars | async">
     <h2 class="title">{{car.title}}</h2>
     <img class="ui medium rounded image" src="{{car.imageUrl}}">
     <h2 class="price">${{car.price}}</h2>
