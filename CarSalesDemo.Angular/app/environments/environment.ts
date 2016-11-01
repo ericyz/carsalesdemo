@@ -1,4 +1,4 @@
 ﻿export const environment = {
     production: false,
-    baseUrl: 'http://carsalesdeomo.azurewebsites.net/api'
+    baseUrl: 'http://localhost:40231/api'
 };

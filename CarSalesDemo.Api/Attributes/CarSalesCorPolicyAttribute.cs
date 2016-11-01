@@ -23,7 +23,7 @@ namespace CarSalesDemo.Api.Attributes {
 
             // Add allowed origins.
             _policy.Origins.Add("http://carsalesdomo.azurewebsites.net");
-            _policy.Origins.Add("http://localhost:63023");
+            _policy.Origins.Add("http://localhost:63024");
         }
         public Task<CorsPolicy> GetCorsPolicyAsync(HttpRequestMessage request, CancellationToken cancellationToken) {
             return Task.FromResult(_policy);
