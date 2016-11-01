@@ -11,9 +11,9 @@ The project aims to provide a website like car galleries. Users can view them, b
 <li>Users can view in detail by clicking any item in the list</li>
 
 <strong>Non-funciton Requirement</strong>
-<li>The website will provide error page when error occurs.<li>
-<li>Users will be able to navigate between each modules, such as detail page and list page.<li>
-<li>Users will be able to have a propery page display with mobile or tabliet devices.<li>
+<li>The website will provide error page when error occurs.</li>
+<li>Users will be able to navigate between each modules, such as detail page and list page.</li>
+<li>Users will be able to have a propery page display with mobile or tabliet devices.</li>
 
 ## Software Architecture
 The software solution is built with service-orientied archietecture (SOA). In this project, one JavaScript app client talks with one RESTful API. 
