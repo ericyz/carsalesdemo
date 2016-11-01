@@ -35,7 +35,6 @@ The project has the following hirearchy.
 The following are the frameworks and libraries are used in the project.
 - Angular 2.1
 - Semantic UI 2.2
-
 - .Net 4.6
 - ASP.NET MVC 5.2.3
 - Newtonsoft.Json 6.0.4
@@ -45,16 +44,18 @@ The following are the frameworks and libraries are used in the project.
 The key point to use SOA is to decouple software components. SAO allows a structure that a centralized web API serves different clients, such as iOS apps, Desktop apps and web apps. In this case, every client and server is a seperated component and the uri is the interface allowing them.
 
 ## Authentication
-Currently, there is no logging module in the requirement. Therefore, 
+Currently, there is no logging module in the requirement. Therefore, the API is public at the moment. When the project has role-based operation or user data, the authentication will be introduced to protect the API resources. Since JavaScript app is operated on client side or untrusted client, when using OAuth2, only implicit or resource owner passowrd credentials grant could be applied. 
 
 ### Where to Store Data
+Since the client only require read access for the data. A data is stored in a Json file located in the Web API server. In order to support other data source when the client needs cocurrent writing operation such as SQL-server relational database. 
 
-### Why to Use Factory Pattern for Data Access
+With the help of Factory design pattern, only further development is to change the web.config, refer to <a href='#appendix'>appendix</a>, and implement the data access layer for new data source.
 
-### Where to Store Image
+### How to Display Image
+Car images is stored in the server side. When requesting car information in Angular page, rather than send them together with the car information in byte array, its API uri is constructed in in the Angular app with the name of car from API. The images are eventually shown with a uri placed in hyperlink tags. 
 
 ### Why to User Obserable in Angular Service
-
+Compared with Angular 1.5.x, Angular 2 is more flexiable in data transfering. In this demo, Obserable are used to bind the data received from API to the views. In Angular 1.5.x, Promise $q is an injected Angular component for making http request. The promise provides a straight-forward approach to process retrieved data, but they are not re-usable. In Angular 2, Observables have advantage over Promises with its flexiablity. With substribing an observable, operations such as filtering and ordering could applied with the same data.
 
 ## Waiting Room
 Due to the time constrant, there are several aspects this project can be further improved in terms of development and user interaction.
@@ -86,6 +87,11 @@ The endpoints are available http://carsalesdeomo.azurewebsites.net. The endpoint
 <i>Allowed Crossed Domains</i>
 - Azure deployment: http://carsalesdomo.azurewebsites.net/ 
 - Local testing environment: http://localhost:63024
+
+<i>Configuration<li>
+In the web config, the following parameters are required to work with Json data provider.
+- DataFolder: the location where json folder is
+- DataProvider: currently only supports 'json'
 
 ### Browser Minimum Support
 <li>Chrome</li>
