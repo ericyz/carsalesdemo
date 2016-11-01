@@ -81,6 +81,7 @@
     <Content Include="app\car-list\car-row.component.html" />
     <Content Include="app\car-list\main.component.css" />
     <Content Include="app\car-list\main.component.html" />
+    <Content Include="app\error\error.component.css" />
     <Content Include="app\error\error.component.html" />
     <Content Include="app\navigation\navigation.component.css" />
     <Content Include="app\navigation\navigation.component.html" />

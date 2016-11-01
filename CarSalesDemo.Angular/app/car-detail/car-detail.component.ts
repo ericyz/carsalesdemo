@@ -12,12 +12,8 @@ import { Observable } from 'rxjs';
 })
 export class CarDetail implements OnInit {
     cars: Observable<Car[]>;
-
     constructor(private route: ActivatedRoute, private carService: CarService, private activeRoute: ActivatedRoute) {
         this.cars = carService.selectedCar;
-//        this.car.subscribe(c=> {
-//            console.log(`the car detail : ${JSON.stringify(c)}`)
-//        });
     }
 
     ngOnInit(): void {

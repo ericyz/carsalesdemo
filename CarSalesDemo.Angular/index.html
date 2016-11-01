@@ -22,5 +22,7 @@
         System.import('app').catch(function (err) { console.error(err); });
     </script>
 </head>
-<carsales-app>Demo is loading...</carsales-app>
+<carsales-app>Demo is loading...
+    <div class="ui active centered inline loader" *ngIf="!isLoad"></div>
+</carsales-app>
 </html>

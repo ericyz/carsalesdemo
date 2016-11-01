@@ -1,6 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 //import { Observable, BehaviorSubject } from 'rxjs';
 import { Http, URLSearchParams, Response } from '@angular/http';
+import {Router} from '@angular/router'
 import { Car, CarJson } from './../Car';
 import { environment } from './../environments/environment';
 import { Observable, BehaviorSubject } from 'rxjs/Rx';
@@ -23,7 +24,7 @@ export class CarService {
     public selectedCar: Observable<Car[]> = this._selectedCar.asObservable();
 
 
-    constructor(private http: Http) {
+    constructor(private http: Http, private router: Router) {
         console.log("car service: constructor");
 
         this._refreshSubject.subscribe(this.getCars.bind(this));
@@ -71,7 +72,8 @@ export class CarService {
         let url: string = `${environment.baseUrl}/${path}`;
 //        console.log(`calling uri =  ${url}, parameters =${params} `);
         return this.http.get(url, { search: params })
-            .map(res => res.json());
+            .map(res => res.json())
+            .catch((error: any) => this.router.navigateByUrl('/error'));
         //            .map((json): CarJson[] => json.map(carJson => Car.fromJson((carJson) as any)));
 
     }

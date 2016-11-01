@@ -9,5 +9,4 @@ import { Car } from './../car';
 })
 export class CarRow {
     car: Car;
-  
 }

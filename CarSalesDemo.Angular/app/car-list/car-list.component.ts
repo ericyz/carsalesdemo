@@ -1,8 +1,9 @@
 ﻿import { Component, EventEmitter, OnInit } from '@angular/core';
 import { Car } from './../car';
-import { Router, ActivatedRoute, } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CarService } from './../service/car.service';
 import { Observable } from 'rxjs';
+import { Response } from '@angular/http';
 import { RouteUtil } from './../utility/route.util';
 
 @Component({
@@ -14,10 +15,14 @@ export class CarList implements OnInit {
 
     //    cars: Car[];
     cars: Observable<Car[]>;
-
+    isLoad:boolean = false;
     public constructor(private router: Router, private activeRoute: ActivatedRoute, private carService: CarService) {
         // Get data from service
-        this.cars = this.carService.cars;
+        this.cars = carService.cars;
+        this.cars.subscribe(() => {
+            this.isLoad = true;
+            console.log('loaded');
+        });
 //        this.carService.cars.subscribe(s => { console.log(s); });
 
         //        this.carWasSelected = new EventEmitter<Car>();
@@ -48,5 +53,9 @@ export class CarList implements OnInit {
             var sellerType = RouteUtil.getValidateType(p);
             this.carService.updateType(sellerType);
         });
+    }
+
+    private _errorHandling(error: Response) {
+        
     }
 }
