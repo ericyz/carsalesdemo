@@ -23,17 +23,22 @@ In the backend, the key idea is to decouple services, including business service
 The data access layer is used with factory pattern. It receives information about data configuration, which is from the web.config and return the repository with read, update, delete and create operation for each entities.
 
 The project has the following hirearchy.
-- <i>Client</i>: Client Applications such as JavaScript Application, Mobile Application or Desktop Application
-  - <i>CarSalesDemo.Angular</i>: JavaScript Application with Angular2
-- <i>Server</i>: Server projects with different layers
-  - <i>CarSalesDemo.Api</i>: High-level API layer, which is used to communicate with client applications
-  - <i>CarSalesDemo.Repository</i>: Data Access Layer with Repository
-  - <i>CarSalesDemo.Model</i>: Domains for this projects
+- <i><u>Client</u></i>: Client Applications such as JavaScript Application, Mobile Application or Desktop Application
+  - <i><u>CarSalesDemo.Angular</u></i>: JavaScript Application with Angular2
+- <i><u>Server</u></i>: Server projects with different layers
+  - <i><u>CarSalesDemo.Api</u></i>: High-level API layer, which is used to communicate with client applications
+  - <i><u>CarSalesDemo.Repository</u></i>: Data Access Layer with Repository
+  - <i><u>CarSalesDemo.Model</u></i>: Domains for this projects
 - <i>Test</i>: Unit Test projects
   - <i>CarSalesDemo.Api.Tests</i>: Unit test for API project
   
-The following are the framework and libraries are used in the project.
-- Angular
+The following are the frameworks and libraries are used in the project.
+- Angular 2.1
+- Semantic UI 2.2
+
+- .Net 4.6
+- ASP.NET MVC 5.2.3
+- Newtonsoft.Json 6.0.4
 
 ## Design Decision
 
