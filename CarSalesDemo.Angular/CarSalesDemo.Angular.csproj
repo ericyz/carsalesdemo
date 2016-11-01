@@ -144,6 +144,7 @@
     <TypeScriptCompile Include="app\index.ts" />
     <TypeScriptCompile Include="app\navigation\navigation.component.ts" />
     <TypeScriptCompile Include="app\service\car.service.ts" />
+    <TypeScriptCompile Include="app\utility\route.util.ts" />
     <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
     <TypeScriptCompile Include="app\environments\environment.ts" />
     <TypeScriptCompile Include="app\app.ts" />
