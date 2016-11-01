@@ -41,6 +41,15 @@ The following are the frameworks and libraries are used in the project.
 - Newtonsoft.Json 6.0.4
 
 ## Design Decision
+### Why to choose SOA
+
+### Why to Use Factory Pattern for Data Access
+
+### Where to Store Data
+
+### Where to Store Image
+
+### Why to User Obserable in Angular in Service
 
 
 ## Waiting Room
@@ -70,7 +79,7 @@ The endpoints are available http://carsalesdeomo.azurewebsites.net. The endpoint
 <i>Image Endpoints</i>
 - api/images?name={name}: request image response by file name
 
-<i>Allowed Origins</i>
+<i>Allowed Crossed Domains</i>
 - Azure deployment: http://carsalesdomo.azurewebsites.net/ 
 - Local testing environment: http://localhost:63024
 
