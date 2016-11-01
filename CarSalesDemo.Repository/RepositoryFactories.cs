@@ -4,21 +4,22 @@ using CarSalesDemo.Repository.Interface;
 namespace CarSalesDemo.Repository {
     public class RepositoryFactories {
 
-        public static IRepositoryFactory GetRepositoryFactory(DataProvier repositoryType) {
-            return GetRepositoryFactory(repositoryType.ToString());
+        public static IRepositoryFactory GetRepositoryFactory(string repositoryType) {
+            return GetRepositoryFactory(repositoryType);
         }
 
-        public static IRepositoryFactory GetRepositoryFactory(string repositoryType) {
+        public static IRepositoryFactory GetRepositoryFactory(string repositoryType, IJsonDataService dataService = null) {
 
-            if (repositoryType == DataProvier.JSON.ToString()) {
-                return new JsonRepository();
+            if (repositoryType.ToUpper() == "JSON" && dataService == null)
+                throw new Exception("Json repository requires a json data service.");
 
-            } else if (repositoryType == DataProvier.SQLSever.ToString()) {
-                throw new NotImplementedException("SQL Server data access layer has not been implemented.");
-
-            } else {
-                return new JsonRepository();
-
+            switch (repositoryType.ToUpper()) {
+                case "JSON":
+                    return new JsonRepository(dataService);
+                case "SQLSever":
+                    throw new NotImplementedException("SQL Server data access layer has not been implemented.");
+                default:
+                    throw new Exception("Not Possible. Please check Data Provider");
             }
         }
     }

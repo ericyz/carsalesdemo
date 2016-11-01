@@ -10,25 +10,25 @@ using CarSalesDemo.Repository.Interface;
 namespace CarSalesDemo.Api.Service.Interface {
 
     public class CarSaleService : ICarSaleService {
-        static readonly string _provider = ConfigurationManager.AppSettings["DataProvier"];
-        static readonly IRepositoryFactory _factory = RepositoryFactories.GetRepositoryFactory(_provider);
-        static readonly IRepository<Car> _carRepository = _factory.CarRepository;
+        //        static readonly string _provider = ConfigurationManager.AppSettings["DataProvier"];
+        //        static readonly IRepositoryFactory _factory = RepositoryFactories.GetRepositoryFactory(_provider);
+        //        static readonly IRepository<Car> _carRepository = _factory.CarRepository;
 
+        private readonly IRepository<Car> _carRepository;
+
+        public CarSaleService(IRepository<Car> carRepository) {
+            this._carRepository = carRepository;
+        }
         public IEnumerable<Car> GetCars() {
             return _carRepository.ReadAll();
-        }
-
-        public IEnumerable<Car> GetCarByResellerType(SellerType type) {
-            return GetCarByResellerType(type);
         }
 
         public IEnumerable<Car> GetCarByResellerType(int type) {
             return _carRepository.ReadAll().Where(s => (int)s.SellerType == type);
         }
 
-        public Car GetCarById(int id)
-        {
-            return _carRepository.ReadAll().FirstOrDefault(s =>s.Id == id);
+        public Car GetCarById(int id) {
+            return _carRepository.ReadAll().FirstOrDefault(s => s.Id == id);
         }
     }
 }

@@ -1,18 +1,37 @@
 ﻿using CarSalesDemo.Api.Service.Interface;
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.Configuration;
+using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Web.Hosting;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using CarSalesDemo.Api.Controllers.Base;
+using CarSalesDemo.Repository;
+using CarSalesDemo.Repository.Interface;
 
 namespace CarSalesDemo.Api.Controllers {
     [EnableCors(origins: "http://localhost:49603", headers: "*", methods: "*")]
-    public class CarsController : ApiController {
+    public class CarsController : DatabaseController {
 
         private readonly ICarSaleService _service;
-        public CarsController() : this(new CarSaleService()) { }
 
-        public CarsController(ICarSaleService service) {
-            _service = service;
+        public CarsController(): this(new JsonDataService(HostingEnvironment.MapPath($"{ConfigurationManager.AppSettings["DataFolder"]}Json/")))
+        {
+        }
+
+        public CarsController(IJsonDataService service = null)
+        {
+            var dataProvider = ConfigurationManager.AppSettings["DataProvier"];
+            if (dataProvider.ToUpper() == DataProvier.JSON.ToString())
+            {
+                var carRepository = RepositoryFactories.GetRepositoryFactory(dataProvider, service).CarRepository;
+                _service = new CarSaleService(carRepository);
+            } else
+            {
+                throw new Exception($"The data provide {dataProvider} has not been implemented");
+            }
         }
 
         [HttpGet]
@@ -20,7 +39,8 @@ namespace CarSalesDemo.Api.Controllers {
             try {
                 var cars = await Task.FromResult(_service.GetCars());
                 return Ok(cars);
-            } catch (Exception) {
+            } catch (Exception ex) {
+                Debug.WriteLine(ex.ToString());
                 return InternalServerError();
             }
         }
@@ -32,7 +52,8 @@ namespace CarSalesDemo.Api.Controllers {
                     return BadRequest();
                 var car = await Task.FromResult(_service.GetCarByResellerType(int.Parse(type)));
                 return Ok(car);
-            } catch (Exception) {
+            } catch (Exception ex) {
+                Debug.WriteLine(ex.ToString());
                 return InternalServerError();
             }
         }
@@ -45,7 +66,8 @@ namespace CarSalesDemo.Api.Controllers {
                 if (car == null)
                     return NotFound();
                 return Ok(car);
-            } catch (Exception) {
+            } catch (Exception ex) {
+                Debug.WriteLine(ex.ToString());
                 return InternalServerError();
             }
         }

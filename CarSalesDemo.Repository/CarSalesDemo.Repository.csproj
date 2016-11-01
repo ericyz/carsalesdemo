@@ -48,11 +48,13 @@
   <ItemGroup>
     <Compile Include="Base\JsonRepositoryBase.cs" />
     <Compile Include="CustomException\IdNotFoundException.cs" />
+    <Compile Include="Interface\IJsonDataService.cs" />
     <Compile Include="Interface\IRepositoryFactory.cs" />
-    <Compile Include="Interface\JsonRepository.cs" />
+    <Compile Include="JsonDataService.cs" />
+    <Compile Include="JsonRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CarRepository.cs" />
-    <Compile Include="Interface\ICarRepository.cs" />
+    <Compile Include="Interface\IRepository.cs" />
     <Compile Include="RepositoryFactories.cs" />
     <Compile Include="Utility\JsonFilePathHelper.cs" />
   </ItemGroup>

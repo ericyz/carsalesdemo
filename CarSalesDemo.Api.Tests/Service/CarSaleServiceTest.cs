@@ -14,52 +14,58 @@ namespace CarSalesDemo.Api.Tests.Service {
     [TestFixture]
     public sealed class CarSaleServiceTest {
 
+        #region sample data
+        private Car car1 = new Car() { Id = 1, ImageName = "image1", Price = 0, SellerType = SellerType.DEALER, Title = "title1" };
+        private Car car2 = new Car() { Id = 2, ImageName = "image2", Price = 1, SellerType = SellerType.PRIVATE, Title = "title2" };
+        private Car car3 = new Car() { Id = 3, ImageName = "image3", Price = 2, SellerType = SellerType.DEALER, Title = "title3" };
+        private Car car4 = new Car() { Id = 4, ImageName = "image4", Price = 3, SellerType = SellerType.PRIVATE, Title = "title4" };
+        private Car car5 = new Car() { Id = 5, ImageName = "image5", Price = 4, SellerType = SellerType.DEALER, Title = "title5" };
+        private IList<Car> sampleData;
+    #endregion
         private ICarSaleService _service;
         [SetUp]
         public void SetUp() {
-            _service = new CarSaleService();
+
+            sampleData = new List<Car>
+                          {
+                                car1, car2, car3, car4, car5
+                             };
+
+            Mock<IRepository<Car>> carRepositoryMock = new Mock<IRepository<Car>>();
+            carRepositoryMock.Setup(s => s.ReadAll()).Returns(sampleData);
+            carRepositoryMock.Setup(s => s.Read(1)).Returns(car1);
+            carRepositoryMock.Setup(s => s.Read(2)).Returns(car2);
+            carRepositoryMock.Setup(s => s.Read(3)).Returns(car3);
+            carRepositoryMock.Setup(s => s.Read(4)).Returns(car4);
+            carRepositoryMock.Setup(s => s.Read(5)).Returns(car5);
+           _service = new CarSaleService(carRepositoryMock.Object);
         }
         [Test]
-        public void ReadAll_Test_Count_Shouldbe11() {
+        public void ReadAll_Test_Count_ShouldPass() {
             var records = _service.GetCars();
-            Assert.AreEqual(11, records.Count());
+            Assert.AreEqual(5, records.Count());
         }
         [Test]
-        public void ReadType_BySeller_Lowercase_Test_Count_Shouldbe6() {
-            var records = _service.GetCarByResellerType(0);
-            Assert.AreEqual(6, records.Count());
+        public void ReadType_ByDealer_Test_Count() {
+            var records = _service.GetCarByResellerType((int)SellerType.DEALER);
+            Assert.AreEqual(3, records.Count());
         }
 
         [Test]
-        public void ReadType_BySeller_UpperCase_Test_Count_Shouldbe6() {
-            var records = _service.GetCarByResellerType(0);
-            Assert.AreEqual(6, records.Count());
+        public void ReadType_ByPrivate_Test_Count() {
+            var records = _service.GetCarByResellerType((int)SellerType.PRIVATE);
+            Assert.AreEqual(2, records.Count());
         }
+
         [Test]
-        public void ReadType_ByPrivate_Test_Lowercase_Count_Shouldbe5() {
-            var records = _service.GetCarByResellerType(1);
-            Assert.AreEqual(5, records.Count());
-        }
-        [Test]
-        public void ReadType_ByPrivate_Test_UpperCase_Count_Shouldbe5() {
-            var records = _service.GetCarByResellerType(1);
-            Assert.AreEqual(5, records.Count());
-        }
-        [Test]
-        public void ReadType_ByPrivate_Test_UpperCase_ShouldReturnCorrectData() {
-            var expectedJson = @"  {""Id"": 1,
-    ""Title"": ""2016 Subaru Forester 2.5i-L S4 Auto AWD MY16"",
-    ""SellerType"": 0,
-    ""ImageName"": ""car1.jpg"",
-    ""Price"": 33950.0,
-    ""LastModifiedDate"": ""05/11/2016""} ";
-            var expectedCar = JsonConvert.DeserializeObject<Car>(expectedJson);
+        public void ReadById_Test_UpperCase_ShouldReturnCorrectData() {
+
             var record = _service.GetCarById(1);
-            Assert.AreEqual(expectedCar.Id, record.Id);
-            Assert.AreEqual(expectedCar.ImageName, record.ImageName);
-            Assert.AreEqual(expectedCar.Price, record.Price);
-            Assert.AreEqual(expectedCar.SellerType, record.SellerType);
-            Assert.AreEqual(expectedCar.Title, record.Title);
+            Assert.AreEqual(car1.Id, record.Id);
+            Assert.AreEqual(car1.ImageName, record.ImageName);
+            Assert.AreEqual(car1.Price, record.Price);
+            Assert.AreEqual(car1.SellerType, record.SellerType);
+            Assert.AreEqual(car1.Title, record.Title);
         }
 
 

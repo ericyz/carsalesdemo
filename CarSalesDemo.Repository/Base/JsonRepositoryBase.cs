@@ -5,15 +5,18 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Hosting;
 using CarSalesDemo.Repository.Utility;
 
 namespace CarSalesDemo.Repository.Base {
     public abstract class JsonRepositoryBase {
         protected string _jsonSrc;
 
-        protected JsonRepositoryBase(string jsonFileName) {
-            var jsonFolderPath = ConfigurationManager.AppSettings["DataFolder"] + "Json/";
-            _jsonSrc = JsonFilePathHelper.GetJsonFilePath(jsonFolderPath, $"{jsonFileName}.json");
+        protected JsonRepositoryBase(string filePath)
+        {
+            _jsonSrc = filePath;
+//                ConfigurationManager.AppSettings["DataFolder"] + "Json/";
+//            _jsonSrc = HostingEnvironment.MapPath($"{jsonFolderPath}${jsonFileName}.json");
         }
     }
 }
