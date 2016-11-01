@@ -3,7 +3,7 @@
 <p>This project is a demo for a car-displaying website. This document includes the requirement, design and major decision made during the development. This repo is the source code for the demo website and the project has also been deployed to Azure web service. Please redirect to <a>http://carsalesdomo.azurewebsites.net/</a>.</p> The web API endpoints declaration also available in the <a href='#appendix'>appendix</a>.
 
 ## Requirement Analysis
-The project aims to provide a website like car galleries. Users can view them, both in a list or in a separate page, and filter them by seller type.
+The project aims to provide a website like car galleries. Users can view them, both in a list or on a separate page, and filter them by seller type.
 
 <strong>Functional Requirement</strong>
 <li>The website can provide users car information in a list</li>
@@ -20,7 +20,7 @@ The software solution is built with service-oriented architecture (SOA). In this
 
 In the backend, the key idea is to decouple services, including business services and data access services. In the high-level web API, difference services are constructed according to the web config and inject them in the API controller constructors.
 
-The data access layer is used with factory pattern. It receives information about data configuration, which is from the web.config and returns the repository with read, update, delete and create operation for each entities.
+The data access layer is used with factory pattern. It receives information about data configuration, which is from the web.config and returns the repository with read, update, delete and create operation for each entity.
 
 The project has the following hierarchy.
 - <i><u>Client</u></i>: Client Applications such as JavaScript Application, Mobile Application or Desktop Application
@@ -41,7 +41,7 @@ The following are the frameworks and libraries are used in the project.
 
 ## Design Decision
 ### Why choose SOA
-The key point to use SOA is to decouple software components. SAO allows a structure that a centralized web API serves different clients, such as iOS apps, Desktop apps and web apps. In this case, every client and server is a seperated component and the uri is the interface allowing them.
+The key point to use SOA is to decouple software components. SAO allows a structure that a centralized web API serves different clients, such as iOS apps, Desktop apps and web apps. In this case, every client and server is a separate component and the uri is the interface allowing them.
 
 ## Authentication
 Currently, there is no logging module in the requirement. Therefore, the API is public at the moment. When the project has role-based operation or user data, the authentication will be introduced to protect the API resources. Since JavaScript app is operated on client side or untrusted client, when using OAuth2, only implicit or resource owner password credentials grant could be applied. 
@@ -55,7 +55,7 @@ With the help of Factory design pattern, only further development is to change t
 Car images are stored in the server side. When requesting car information in Angular page, rather than send them together with the car information in a byte array, its API uri is constructed in the Angular app with the name of car from API. The images are eventually shown with a uri placed in hyperlink tags. 
 
 ### Why to User Observable in Angular Service
-Compared with Angular 1.5.x, Angular 2 is more flexiable in data transfering. In this demo, Observable are used to bind the data received from API to the views. In Angular 1.5.x, Promise $q is an injected Angular component for making http request. The promise provides a straight-forward approach to process retrieved data, but they are not re-usable. In Angular 2, Observable have an advantage over Promises with its flexibility. With subscribing an observable, operations such as filtering and ordering could be applied with the same data.
+Compared with Angular 1.5.x, Angular 2 is more flexible in data transferring. In this demo, Observable are used to bind the data received from API to the views. In Angular 1.5.x, Promise $q is an injected Angular component for making HTTP request. The promise provides a straight-forward approach to process retrieved data, but they are not re-usable. In Angular 2, Observable have an advantage over Promises with its flexibility. With subscribing an observable, operations such as filtering and ordering could be applied to the same data.
 
 ## Waiting Room
 Due to the time constraint, there are several aspects this project can be further improved in terms of development and user interaction.
