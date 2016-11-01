@@ -1,6 +1,6 @@
 # CarSales Demo Design Documentation
 ## Overview
-<p>This project is a demo for car-displaying website. This document includes the requirement, design and major decision made during the development. This repo is the source code for the demo website and the project has also been deployed to Azure web service. Please redirect to <a>http://carsalesdomo.azurewebsites.net/</a>.</p> The web api endpoints declaration also available in the <a>< href='#appendix'>appendix</a>.
+<p>This project is a demo for car-displaying website. This document includes the requirement, design and major decision made during the development. This repo is the source code for the demo website and the project has also been deployed to Azure web service. Please redirect to <a>http://carsalesdomo.azurewebsites.net/</a>.</p> The web api endpoints declaration also available in the <a href='#appendix'>appendix</a>.
 
 ## Requirement Analysis
 The project aims to provide a website like car galleries. Users can view them, both in list or in a seperate page, and filter them by seller type.
@@ -16,7 +16,7 @@ The project aims to provide a website like car galleries. Users can view them, b
 <li>Users will be able to have a propery page display with mobile or tabliet devices.</li>
 
 ## Software Architecture
-The software solution is built with service-orientied archietecture (SOA). In this project, one JavaScript app client talks with one RESTful API. 
+The software solution is built with service-orientied archietecture (SOA). In this project, one JavaScript app client talks with one RESTful API. Even though the requirement given is not complex, a well-design software should keep the cost of extending functionalities as lowest as possible.
 
 In the backend, the key idea is to decouple services, including business services and data accesss services. In the high-level web api, difference services are constructed according to the web config and inject them in the API controller constructors.
 
@@ -42,14 +42,18 @@ The following are the frameworks and libraries are used in the project.
 
 ## Design Decision
 ### Why to choose SOA
+The key point to use SOA is to decouple software components. SAO allows a structure that a centralized web API serves different clients, such as iOS apps, Desktop apps and web apps. In this case, every client and server is a seperated component and the uri is the interface allowing them.
 
-### Why to Use Factory Pattern for Data Access
+## Authentication
+Currently, there is no logging module in the requirement. Therefore, 
 
 ### Where to Store Data
 
+### Why to Use Factory Pattern for Data Access
+
 ### Where to Store Image
 
-### Why to User Obserable in Angular in Service
+### Why to User Obserable in Angular Service
 
 
 ## Waiting Room
