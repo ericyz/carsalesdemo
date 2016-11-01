@@ -1,0 +1,9 @@
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Repository\bin\Release\CarSalesDemo.Repository.dll
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Repository\bin\Release\CarSalesDemo.Repository.pdb
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Repository\bin\Release\CarSalesDemo.Model.dll
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Repository\bin\Release\Newtonsoft.Json.dll
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Repository\bin\Release\CarSalesDemo.Model.pdb
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Repository\bin\Release\Newtonsoft.Json.xml
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Repository\obj\Release\CarSalesDemo.Repository.csprojResolveAssemblyReference.cache
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Repository\obj\Release\CarSalesDemo.Repository.dll
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Repository\obj\Release\CarSalesDemo.Repository.pdb

@@ -112,10 +112,6 @@
     <Compile Include="Service\CarSaleServiceTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Json\cars.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

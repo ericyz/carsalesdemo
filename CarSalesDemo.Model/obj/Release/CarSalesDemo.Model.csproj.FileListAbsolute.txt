@@ -1,0 +1,5 @@
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Model\bin\Release\CarSalesDemo.Model.dll
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Model\bin\Release\CarSalesDemo.Model.pdb
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Model\obj\Release\CarSalesDemo.Model.csprojResolveAssemblyReference.cache
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Model\obj\Release\CarSalesDemo.Model.dll
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Model\obj\Release\CarSalesDemo.Model.pdb

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -31,8 +32,10 @@ namespace CarSalesDemo.Api.Controllers {
         {
             try
             {
-                StreamContent content = await Task.FromResult(_imageService.LoadImage(name));
-                return new ImageResult(content);
+                byte[] content = await Task.FromResult(_imageService.LoadImage(name));
+                // Avoid disposed stream
+                var stream = new MemoryStream(content);
+                return new ImageResult(new StreamContent(stream));
             } catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());

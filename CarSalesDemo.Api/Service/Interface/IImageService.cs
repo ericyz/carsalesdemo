@@ -1,8 +1,8 @@
-﻿using System.Net.Http;
+﻿using System.IO;
+using System.Net.Http;
 
 namespace CarSalesDemo.Api.Service.Interface {
     public interface IImageService {
-        StreamContent LoadImage(string fileName);
-        StreamContent LoadCompressImage(string fileName);
+        byte[] LoadImage(string fileName);
     }
 }
