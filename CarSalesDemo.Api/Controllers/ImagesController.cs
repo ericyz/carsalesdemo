@@ -10,12 +10,13 @@ using System.Threading.Tasks;
 using System.Web.Hosting;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using CarSalesDemo.Api.Attributes;
 using CarSalesDemo.Api.HttpResult;
 using CarSalesDemo.Api.Service;
 using CarSalesDemo.Api.Service.Interface;
 
 namespace CarSalesDemo.Api.Controllers {
-    [EnableCors(origins: "http://localhost:49603", headers: "*", methods: "*")]
+    [CarSalesCorPolicy]
     public class ImagesController : ApiController {
         private IImageService _imageService;
         public ImagesController(IImageService service) {

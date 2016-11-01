@@ -181,6 +181,7 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attributes\CarSalesCorPolicyAttribute.cs" />
     <Compile Include="Controllers\Base\DatabaseController.cs" />
     <Compile Include="Controllers\CarsController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />

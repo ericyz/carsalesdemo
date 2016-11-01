@@ -40,7 +40,7 @@ export class CarService {
         console.log("car service: getCars");
         this._makeHttpRequest("cars", this._generateSearchParameter(request)).subscribe(json => {
             const cars = json.map((carJson: CarJson) => Car.fromJson(carJson));
-            console.log(`"car results: ${cars}`);
+//            console.log(`"car results: ${cars}`);
             this._cars.next(cars);
         });
     }
@@ -50,7 +50,7 @@ export class CarService {
             this._makeHttpRequest(`cars/${id}`)
                 .subscribe(json => {
                     var car = Car.fromJson(json);
-                    console.log(car);
+//                    console.log(car);
                     this._selectedCar.next([car]);
                 });
         }
@@ -69,7 +69,7 @@ export class CarService {
     // helper
     private _makeHttpRequest(path: string, params?: URLSearchParams): Observable<any> {
         let url: string = `${environment.baseUrl}/${path}`;
-        console.log(`calling uri =  ${url}, parameters =${params} `);
+//        console.log(`calling uri =  ${url}, parameters =${params} `);
         return this.http.get(url, { search: params })
             .map(res => res.json());
         //            .map((json): CarJson[] => json.map(carJson => Car.fromJson((carJson) as any)));

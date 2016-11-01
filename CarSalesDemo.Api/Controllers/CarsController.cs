@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 using System.Web.Hosting;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using CarSalesDemo.Api.Attributes;
 using CarSalesDemo.Api.Controllers.Base;
 using CarSalesDemo.Repository;
 using CarSalesDemo.Repository.Interface;
 
 namespace CarSalesDemo.Api.Controllers {
-    [EnableCors(origins: "http://localhost:49603", headers: "*", methods: "*")]
+    [CarSalesCorPolicy]
     public class CarsController : DatabaseController {
 
         private readonly ICarSaleService _service;

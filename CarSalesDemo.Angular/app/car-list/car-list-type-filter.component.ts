@@ -8,7 +8,7 @@ import { RouteUtil } from './../utility/route.util';
 @Component({
     selector: 'car-list-type-filter',
     templateUrl: 'app/car-list/car-list-type-filter.component.html',
-    styleUrls: ['app/car-list/car-list-type-filter.component.css'],
+   styleUrls: ['app/car-list/car-list-type-filter.component.css'],
     providers: [CarService]
 })
 export class CarTypeFilter {

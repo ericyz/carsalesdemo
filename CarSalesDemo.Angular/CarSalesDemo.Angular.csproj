@@ -74,8 +74,10 @@
     <Content Include="app\app.component.html" />
     <Content Include="app\car-detail\car-detail.component.css" />
     <Content Include="app\car-detail\car-detail.component.html" />
+    <Content Include="app\car-list\car-list-type-filter.component.css" />
     <Content Include="app\car-list\car-list-type-filter.component.html" />
     <Content Include="app\car-list\car-image.component.html" />
+    <Content Include="app\car-list\car-list.component.css" />
     <Content Include="app\car-list\car-row.component.html" />
     <Content Include="app\car-list\main.component.css" />
     <Content Include="app\car-list\main.component.html" />
@@ -94,7 +96,13 @@
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
     <Content Include="app\car-list\car-list.component.html" />
-    <TypeScriptCompile Include="app\utility\route.util.ts" />
+    <None Include="Properties\PublishProfiles\carsalesdomo - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\carsalesdomo - FTP %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\carsalesdomo - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\carsalesdomo - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\carsalesdomo - Web Deploy %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\carsalesdomo - Web Deploy %284%29.pubxml" />
+    <None Include="Properties\PublishProfiles\carsalesdomo - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -104,8 +112,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="index.html" />
     <Content Include="karma-test-shim.js" />
     <Content Include="karma.conf.js" />
@@ -139,7 +145,6 @@
     <TypeScriptCompile Include="app\navigation\navigation.component.ts" />
     <TypeScriptCompile Include="app\service\car.service.ts" />
     <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
-    <TypeScriptCompile Include="app\environments\environment.prod.ts" />
     <TypeScriptCompile Include="app\environments\environment.ts" />
     <TypeScriptCompile Include="app\app.ts" />
   </ItemGroup>
@@ -165,7 +170,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50145</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49603/</IISUrl>
+          <IISUrl>http://localhost:63023/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
