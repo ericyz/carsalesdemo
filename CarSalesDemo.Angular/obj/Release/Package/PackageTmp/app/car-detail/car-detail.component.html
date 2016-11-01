@@ -1,5 +1,0 @@
-﻿<div class="ui segment" *ngFor="let car of cars | async">
-    <h2 class="title">{{car.title}}</h2>
-    <img class="ui massive rounded image" src="{{car.imageUrl}}">
-    <h2 class="price">{{car.price | currency: 'USD':true:'1.0-2'}}</h2>
-</div>
