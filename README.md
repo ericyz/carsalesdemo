@@ -59,6 +59,11 @@ Car images are stored in the server side. When requesting car information in Ang
 ### Why to User Observable in Angular Service
 Compared with Angular 1.5.x, Angular 2 is more flexible in data transferring. In this demo, Observables are used to bind the data received from API to the views. In Angular 1.5.x, Promise $q is an injected Angular component for making HTTP request. The promise provides a straight-forward approach to process retrieved data, but they are not re-usable. In Angular 2, Observable have an advantage over Promises with its flexibility. With subscribing an observable, operations such as filtering and ordering could be applied to the same data.
 
+### Error Handling and Waiting Image
+The error occurs in Web API will be handled in try catch block and return 500 internal service error code. This 500 error code will be handled in the Angular service and redirect to error page.
+
+Because Observables are the asynchronized stream, it might take some time for the Angular app to retrieve data from Web API; therefore, a spinner has been placed while the data is being retrieved.
+
 ## Waiting Room
 Due to the time constraint, there are several aspects this project can be further improved in terms of development and user interaction.
 
@@ -68,11 +73,11 @@ Due to the time constraint, there are several aspects this project can be furthe
 - The service can be extracted to a sperated layer from web API when the project goes large.
 - Move datasource to relational database such as MySQL or SQL server.
 - It is an efficient practice that using Jasmine and NUnit to write test cases on interfaces when the project goes large.
+- When loading car list webpage, compressed images could be transferred rather than origin images, because the images take about 0.5s to render.
 
 <i>Usability Improvement</i>
-- Notify users when error occurs
-- Notify users when the page is loading
 - Add CSS styles or separate view for mobile or tablets users
+- When entering car detail page, the previous will remain displayed before new car image is rendered. This could be resolved by removing all content before retrieving the new car data.
 
 ## <span id='appendix'>Appendix</span>
 ### Web API
