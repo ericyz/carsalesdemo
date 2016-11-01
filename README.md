@@ -88,7 +88,7 @@ The endpoints are available http://carsalesdeomo.azurewebsites.net. The endpoint
 - Azure deployment: http://carsalesdomo.azurewebsites.net/ 
 - Local testing environment: http://localhost:63024
 
-<i>Configuration<li>
+<i>Configuration</i>
 In the web config, the following parameters are required to work with Json data provider.
 - DataFolder: the location where json folder is
 - DataProvider: currently only supports 'json'
