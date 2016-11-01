@@ -17,3 +17,4 @@ C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Angular\bin\Microsoft.CodeDo
 C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Angular\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Angular\obj\Release\CarSalesDemo.Angular.dll
 C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Angular\obj\Release\CarSalesDemo.Angular.pdb
+C:\bitbucket\CarSalesDemo\CarSalesDemo\CarSalesDemo.Angular\obj\Release\CarSalesDemo.Angular.csprojResolveAssemblyReference.cache
