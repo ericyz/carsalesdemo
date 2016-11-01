@@ -17,7 +17,7 @@ export class Car {
             {
                 id: json.id,
                 title: json.title,
-                type: json.sellerType == 0 ? 'dealer' : 'private seller',
+                type: json.sellerType == 0 ? 'Dealer' : 'Private Seller',
                 imageUrl: `${environment.baseUrl}/images?name=${json.imageName}`,
                 price: json.price
             });
